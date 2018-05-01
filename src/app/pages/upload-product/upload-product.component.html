@@ -1,0 +1,15 @@
+<div class="page">
+  <div class="title">Upload Your Item</div>
+
+  <div *ngIf="loadingImage" class="loader"> </div>
+  <label *ngIf="!loadingImage"> ADD A PHOTO
+    <input type="file" #fileUpload (change)="handleFiles($event)" accept="image/*">
+  </label>
+  <div class="box">
+    <img *ngIf="imgUrl" [src]="imgUrl" alt="">
+  </div>
+  <input type="text" placeholder="Short Description" [(ngModel)]="description">
+  <div *ngIf="imgUrl && !loadingAll" class="continue" (click)="start()"> START BARTERING </div>
+  <div *ngIf="loadingAll" class="loader"> </div>
+
+</div>

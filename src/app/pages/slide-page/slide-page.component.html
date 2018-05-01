@@ -1,0 +1,44 @@
+<div class="page">
+  <div class="header">
+    <img src="../../../assets/logo.png" alt="">
+  </div>
+  <div class="body">
+    <img *ngIf="data.length > 0" [src]="data[currentIndex].image" alt="" >
+    <div class="bottom-img">
+      <div *ngIf="data.length > 0" class="title"> {{data[currentIndex].desc}} </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="button small" (click)="clickRefresh()">
+      <img class="refresh" src="../../../assets/refresh.PNG" alt="">
+    </div>
+    <div class="button" (click)="clickDecline()">
+      <img src="../../../assets/x.PNG" alt="">
+    </div>
+    <div class="button" (click)="clickApprove()">
+      <img src="../../../assets/v.PNG" alt="">
+    </div>
+    <div class="button small">
+      <img class="location" src="../../../assets/plus.png" alt="" [routerLink]="'/upload-product'">
+    </div>
+  </div>
+</div>
+
+<div [class.visible]="match" class="match">
+  <div class="title"> It's a Match!</div>
+  <div class="subtitle"> Someone liked you</div>
+
+  <div class="images">
+    <img *ngIf="yourImage" [src]="yourImage" alt="">
+    <img *ngIf="friendImage" [src]="friendImage" alt="">
+  </div>
+
+  <div class="button">
+    <img *ngIf="data[currentIndex]" src="../../../assets/message.PNG" alt=""> call {{data[currentIndex].name}} :
+    <a href="tel:052-4652966">052-4652966</a>
+  </div>
+
+  <div class="button" (click)="continue()">
+    <img src="../../../assets/keep.PNG" alt=""> Keep Playing
+  </div>
+</div>

@@ -4,5 +4,10 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://hujihackathon.herokuapp.com/',
+  cloudinary_cloud_name: 'dlww64nbo',
+  cloudinary_preset: 'preset',
+  // myId :Math.round(Math.random() * 1000000) 
+  myId :'123'
 };
